@@ -70,7 +70,6 @@ Bạn có thể tuỳ chỉnh cấu hình (ví dụ: thêm Prisma, shadcn/ui, Au
 ☕ Ủng hộ tác giả
 Nếu bạn thấy thư viện hữu ích, hãy ủng hộ tôi để có thêm động lực phát triển ❤️
 
-<p align="center"> <img src="https://firebasestorage.googleapis.com/v0/b/clinic-scheduler-e62c2.appspot.com/o/qrmoney.jpeg?alt=media&token=6cbe62e8-4353-4c91-b635-6a74cb076d7d" alt="Ủng hộ qua QR" width="260" /> </p>
 📜 License
 MIT © 2025 Đào Văn Quang
 ```
