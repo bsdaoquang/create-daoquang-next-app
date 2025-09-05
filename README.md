@@ -2,19 +2,23 @@
 
 # create-daoquang-next-app
 
-🚀 **Scaffold Next.js App Router project** với cấu hình sẵn: phân trang, đa ngôn ngữ (i18n), TailwindCSS, ESLint, TypeScript.  
+[![npm version](https://img.shields.io/npm/v/create-daoquang-next-app?color=blue&label=npm%20version)](https://www.npmjs.com/package/create-daoquang-next-app)
+[![npm downloads](https://img.shields.io/npm/dm/create-daoquang-next-app.svg?color=green&label=downloads)](https://www.npmjs.com/package/create-daoquang-next-app)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
+🚀 Scaffold **Next.js App Router** project với cấu hình sẵn: đa ngôn ngữ (i18n), TailwindCSS, TypeScript, ESLint.  
 Chỉ cần 1 lệnh để khởi tạo dự án Next.js chuẩn hóa cho team hoặc cá nhân.
 
 ---
 
-## ✨ Tính năng
+## ✨ Tính năng nổi bật
 
-- ⚡ Next.js **App Router** (>= 14)
-- 🌍 **i18n** nhiều ngôn ngữ (mặc định `vi`, `en`)
+- ⚡ **Next.js App Router** (>= 14)
+- 🌍 **Đa ngôn ngữ (i18n)** mặc định `vi`, `en`
 - 🎨 **TailwindCSS** (tùy chọn khi tạo dự án)
-- 🔒 ESLint + TypeScript cấu hình sẵn
+- 🔒 **TypeScript + ESLint** cấu hình sẵn
 - 📦 Cấu trúc thư mục chuẩn `src/app`, `src/lib`, `src/components`
-- 🛠 Có thể mở rộng thêm shadcn/ui, Prisma, Auth, …
+- 🛠 Dễ dàng mở rộng với **shadcn/ui**, **Prisma**, **Auth**, ...
 
 ---
 
@@ -26,15 +30,47 @@ Dùng `npm create` (hoặc `npx`):
 npm create daoquang-next-app@latest my-app
 # hoặc
 npx create-daoquang-next-app my-app
-
 CLI sẽ hỏi bạn:
-Tên thư mục dự án
-Tên package.json
-Có bật TailwindCSS không
-Danh sách locales (mặc định vi,en)
 
-Chạy thử
+📂 Tên thư mục dự án
+
+📦 Tên package.json
+
+🎨 Có bật TailwindCSS không
+
+🌍 Danh sách locales (mặc định vi,en)
+
+🚀 Chạy thử
+bash
+Sao chép mã
 cd my-app
 npm run dev
+Mở http://localhost:3000 để xem ứng dụng.
 
+📂 Cấu trúc template
+perl
+Sao chép mã
+my-app/
+├─ src/
+│  ├─ app/          # App Router
+│  ├─ components/   # React components
+│  ├─ lib/          # tiện ích, hooks
+│  └─ styles/       # CSS / Tailwind
+├─ next.config.mjs
+├─ tailwind.config.ts
+├─ tsconfig.json
+├─ package.json
+└─ ...
+🛠 Phát triển
+Dự án này chỉ là scaffolder.
+Toàn bộ code template nằm trong thư mục templates/default.
+
+Bạn có thể tuỳ chỉnh cấu hình (ví dụ: thêm Prisma, shadcn/ui, Auth, …) rồi publish bản mới.
+
+☕ Ủng hộ tác giả
+Nếu bạn thấy thư viện hữu ích, hãy ủng hộ tôi để có thêm động lực phát triển ❤️
+
+<p align="center"> <img src="https://firebasestorage.googleapis.com/v0/b/clinic-scheduler-e62c2.appspot.com/o/qrmoney.jpeg?alt=media&token=6cbe62e8-4353-4c91-b635-6a74cb076d7d" alt="Ủng hộ qua QR" width="260" /> </p>
+📜 License
+MIT © 2025 Đào Văn Quang
 ```
