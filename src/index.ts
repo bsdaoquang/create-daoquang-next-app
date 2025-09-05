@@ -21,18 +21,19 @@ function detectPM() {
 
 async function main() {
 	const argTarget = process.argv[2]; // my-app
+
 	const res = await prompts(
 		[
 			{
 				type: argTarget ? null : 'text',
 				name: 'target',
-				message: 'Tên thư mục dự án?',
+				message: 'Project name?',
 				initial: 'my-app',
 			},
 			{
 				type: 'text',
 				name: 'packageName',
-				message: 'Tên package.json?',
+				message: 'Package name?',
 				initial: (prev, values) =>
 					(argTarget || values.target || 'my-app')
 						.toString()
@@ -43,7 +44,7 @@ async function main() {
 			{
 				type: 'toggle',
 				name: 'useTailwind',
-				message: 'Bao gồm TailwindCSS?',
+				message: 'Include TailwindCSS?',
 				initial: true,
 				active: 'yes',
 				inactive: 'no',
@@ -51,7 +52,7 @@ async function main() {
 			{
 				type: 'text',
 				name: 'locales',
-				message: 'Danh sách locales (phân tách bằng dấu phẩy)',
+				message: 'i18n locales (comma separated)',
 				initial: 'vi,en',
 			},
 		],
@@ -70,7 +71,7 @@ async function main() {
 
 	const dest = path.resolve(process.cwd(), ctx.target);
 	if (fs.existsSync(dest) && fs.readdirSync(dest).length) {
-		console.log(red(`Thư mục '${ctx.target}' không rỗng.`));
+		console.log(red(`Directory '${ctx.target}' is not empty.`));
 		process.exit(1);
 	}
 	await fs.mkdirp(dest);
@@ -92,7 +93,7 @@ async function main() {
 		await execa('git', ['init'], { cwd: dest, stdio: 'inherit' });
 	} catch {}
 	const pm = detectPM();
-	console.log(yellow(`Cài dependencies bằng ${pm}…`));
+	console.log(yellow(`Installing dependencies with ${pm}…`));
 	await execa(pm, ['install'], { cwd: dest, stdio: 'inherit' });
 
 	try {
@@ -104,8 +105,8 @@ async function main() {
 		);
 	} catch {}
 
-	console.log(green(`\n✔ Dự án sẵn sàng: ${cyan(ctx.target)}\n`));
-	console.log(`Chạy dev:\n  cd ${ctx.target}\n  ${pm} run dev\n`);
+	console.log(green(`\n✔ Project ready: ${cyan(ctx.target)}\n`));
+	console.log(`Run dev:\n  cd ${ctx.target}\n  ${pm} run dev\n`);
 }
 
 main().catch((err) => {
