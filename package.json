@@ -1,10 +1,10 @@
 {
-	"name": "create-bee-next-app",
+	"name": "create-daoquang-next-app",
 	"version": "0.1.0",
 	"description": "Scaffold Next.js App Router template (i18n, Bootstrap CSS, Ant Design, ESLint, etc.) in seconds",
 	"type": "module",
 	"bin": {
-		"create-bee-next-app": "bin/cli.js"
+		"create-daoquang-next-app": "bin/cli.js"
 	},
 	"files": [
 		"bin",
