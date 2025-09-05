@@ -1,11 +1,18 @@
 {
 	"name": "create-daoquang-next-app",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"description": "Scaffold Next.js App Router template (i18n, Bootstrap CSS, Ant Design, ESLint, etc.) in seconds",
 	"type": "module",
 	"bin": {
 		"create-daoquang-next-app": "bin/cli.js"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bsdaoquang/create-daoquang-next-app.git"
+	},
+	"author": "Đào Quang <bsdaoquang@gmail.com>",
+	"license": "MIT",
+	"homepage": "https://github.com/bsdaoquang/create-daoquang-next-app#readme",
 	"files": [
 		"bin",
 		"dist",
