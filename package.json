@@ -1,6 +1,6 @@
 {
 	"name": "create-daoquang-next-app",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Scaffold Next.js App Router template (i18n, Bootstrap CSS, Ant Design, ESLint, etc.) in seconds",
 	"type": "module",
 	"bin": {
