@@ -17,7 +17,8 @@
 		"build": "tsup src/index.ts src/scaffold.ts --format esm --dts --clean",
 		"dev": "tsup src/index.ts src/scaffold.ts --format esm --watch",
 		"prepublishOnly": "npm run build",
-		"e2e": "node bin/cli.js ci-app --yes --packageName=ci-app --locales=vi,en && cd ci-app && npm i && npm run build"
+		"e2e": "node bin/cli.js ci-app --yes --packageName=ci-app --locales=vi,en && cd ci-app && npm i && npm run build",
+		"publish": "npm publish --access public"
 	},
 	"dependencies": {
 		"execa": "^9.3.0",
