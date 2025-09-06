@@ -37,7 +37,7 @@ async function main() {
         type: "toggle",
         name: "useTailwind",
         message: "Include TailwindCSS?",
-        initial: true,
+        initial: false,
         active: "yes",
         inactive: "no"
       },
