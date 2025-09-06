@@ -78,6 +78,15 @@ async function main() {
 
 	await renderDir(TPL_DIR, dest, ctx);
 
+	// Ensure .gitignore exists (npm often strips .gitignore from published templates)
+	try {
+		const gi = path.join(dest, 'gitignore');
+		const dotGi = path.join(dest, '.gitignore');
+		if (await fs.pathExists(gi) && !(await fs.pathExists(dotGi))) {
+			await fs.move(gi, dotGi);
+		}
+	} catch {}
+
 	// Nếu muốn, có thể bật/tắt file Tailwind theo ctx.useTailwind
 	if (!ctx.useTailwind) {
 		// ví dụ: xoá tailwind config & postcss nếu không dùng
