@@ -45,7 +45,7 @@ async function main() {
 				type: 'toggle',
 				name: 'useTailwind',
 				message: 'Include TailwindCSS?',
-				initial: true,
+				initial: false,
 				active: 'yes',
 				inactive: 'no',
 			},
@@ -82,7 +82,7 @@ async function main() {
 	try {
 		const gi = path.join(dest, 'gitignore');
 		const dotGi = path.join(dest, '.gitignore');
-		if (await fs.pathExists(gi) && !(await fs.pathExists(dotGi))) {
+		if ((await fs.pathExists(gi)) && !(await fs.pathExists(dotGi))) {
 			await fs.move(gi, dotGi);
 		}
 	} catch {}

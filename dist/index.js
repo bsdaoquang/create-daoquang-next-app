@@ -63,6 +63,14 @@ async function main() {
   }
   await fs.mkdirp(dest);
   await renderDir(TPL_DIR, dest, ctx);
+  try {
+    const gi = path.join(dest, "gitignore");
+    const dotGi = path.join(dest, ".gitignore");
+    if (await fs.pathExists(gi) && !await fs.pathExists(dotGi)) {
+      await fs.move(gi, dotGi);
+    }
+  } catch {
+  }
   if (!ctx.useTailwind) {
     for (const f of ["tailwind.config.ts", "postcss.config.js"]) {
       const p = path.join(dest, f);
